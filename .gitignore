@@ -2,3 +2,7 @@
 *.sdf
 *.opensdf
 Debug/
+
+# Ó¦ÓÃÓÚcl±àÒëÆ÷
+*.obj
+*.exe
