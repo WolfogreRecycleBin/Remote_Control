@@ -6,3 +6,6 @@ Debug/
 # 应用于cl编译器
 *.obj
 *.exe
+
+# 应用于Code Blocks
+obj/
