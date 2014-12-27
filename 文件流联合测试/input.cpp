@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <windows.h>
 using namespace std;
 int main(void)
@@ -10,8 +11,8 @@ int main(void)
 		if (fin)
 		{
 			cout << "文件有效,";
-			int i;
-			if(fin >> i)
+			string i;
+			if(getline(fin,i))
 				cout << "读到" << i << endl;
 			else
 			{
