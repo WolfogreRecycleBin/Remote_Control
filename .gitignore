@@ -9,3 +9,6 @@ Debug/
 
 # 应用于Code Blocks
 obj/
+
+# 针对Remote_Control工程
+Example/

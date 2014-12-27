@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1403955760 source:e:\visualstudioprojects\remote_control\runball\src\main.cpp
+1419698391 source:e:\visualstudioprojects\remote_control\runball\src\main.cpp
 	"ofMain.h"
 	"ofApp.h"
 
@@ -1479,6 +1479,7 @@
 1403955760 e:\visualstudioprojects\remote_control\runball\src\ofapp.h
 	"ofMain.h"
 
-1403955760 source:e:\visualstudioprojects\remote_control\runball\src\ofapp.cpp
+1419700660 source:e:\visualstudioprojects\remote_control\runball\src\ofapp.cpp
 	"ofApp.h"
+	<ofMain.h>
 
