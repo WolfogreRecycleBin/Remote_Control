@@ -23,7 +23,7 @@ int main(void)
 		{
 			cout << "文件无效" << endl;
 		}
-		Sleep(100);
+		Sleep(10);
 	}
 	return 0;
 }

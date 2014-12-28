@@ -12,10 +12,10 @@
 
 ***
 > 编译环境：
-Microsoft Visual Studio Professional 2013
-版本 12.0.31101.00 Update 4
-Code::Blocks
-版本 13.12
+> Microsoft Visual Studio Professional 2013
+> 版本 12.0.31101.00 Update 4
+> Code::Blocks
+> 版本 13.12
 ***
 > 依赖库:
 > OpenCV 2.4.9 for Windows
