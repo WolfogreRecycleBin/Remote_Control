@@ -21,8 +21,8 @@ int main(void)
 	{
 		cap >> frame;
 		DetectAndOutput(face_cascade,frame,"data.lw");
-		key = kbhit();
-		if (key == 1) break;
+		key = waitKey(1);
+		if (key == ' ') break;
 	}
 	destroyAllWindows();
 	cap.release();
@@ -65,6 +65,16 @@ void DetectAndOutput(CascadeClassifier &cascade, Mat &frame, string output_filen
 	{
 		cout << "没有检测到" << endl;
 	}
+	for (int i = 0; i < aims.size(); i++)
+	{
+		Point center(aims[i].x + aims[i].width*0.5, aims[i].y + aims[i].height*0.5);
+		circle(frame, center, (aims[i].width + aims[i].height)*0.25, Scalar(0, 0, 255), 3);
+	}
+	const double new_row = 200;
+	double new_col = new_row / frame.rows * frame.cols;
+	Size new_size(new_col, new_row);
+	resize(frame, frame, new_size);
+	imshow("人脸检测结果", frame);
 		
 }
 

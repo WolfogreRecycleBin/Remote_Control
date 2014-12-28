@@ -1,7 +1,7 @@
 #include "ofApp.h"
 #include <cmath>
 #include <fstream>
-const double damp=0.99;
+const double damp=0.9;
 class Ball
 {
 //private:
@@ -61,7 +61,9 @@ void ofApp::update(){
     {
         cout << "文件无效" << endl;
     }
-    if(ex_fase_x==-1 && ex_fase_x==-1)
+    if(ex_fase_x==-1 && ex_fase_x==-1 ||
+       abs(ex_fase_x-fase_x)>200 || abs(ex_fase_y-fase_y)>200/* ||
+       abs(ex_fase_x-fase_x)<5 || abs(ex_fase_y-fase_y)<5*/)
     {
         ex_fase_x=fase_x;
         ex_fase_y=fase_y;
@@ -69,7 +71,7 @@ void ofApp::update(){
     }
     else
     {
-        aim.Update(fase_x-ex_fase_x,fase_y-ex_fase_y);
+        aim.Update(-(fase_x-ex_fase_x)*0.5,(fase_y-ex_fase_y)*0.5);
         ex_fase_x=fase_x;
         ex_fase_y=fase_y;
     }
