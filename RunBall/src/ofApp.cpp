@@ -1,5 +1,6 @@
 #include "ofApp.h"
 #include <cmath>
+#include <fstream>
 const double damp=0.99;
 class Ball
 {
@@ -34,6 +35,8 @@ public:
 };
 
 Ball aim(800/2,600/2,30,-5,20);
+int ex_fase_x=-1,ex_fase_y=-1;
+int fase_x=-1,fase_y=-1;
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofSetFrameRate(60);
@@ -43,8 +46,33 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    aim.Update();
-
+    ifstream fin("data.lw");
+    if (fin)
+    {
+        cout << "文件有效,";
+        if(fin>>fase_x>>fase_y)
+            cout << "读到" << fase_x<<" "<<fase_y << endl;
+        else
+        {
+            cout << "没有读到" << endl;
+        }
+    }
+    else
+    {
+        cout << "文件无效" << endl;
+    }
+    if(ex_fase_x==-1 && ex_fase_x==-1)
+    {
+        ex_fase_x=fase_x;
+        ex_fase_y=fase_y;
+        aim.Update();
+    }
+    else
+    {
+        aim.Update(fase_x-ex_fase_x,fase_y-ex_fase_y);
+        ex_fase_x=fase_x;
+        ex_fase_y=fase_y;
+    }
 }
 
 //--------------------------------------------------------------
